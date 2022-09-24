@@ -1,4 +1,4 @@
-class PokemonModel {
+export default class PokemonModel {
   constructor(number = 1, name = "bulbasaur") {
     //lista över presenters}
     this.observers = [];
@@ -9,6 +9,7 @@ class PokemonModel {
   setNumber(number) {
     if (number > 0) {
       this.number = number;
+			console.log("Number set in model.");
     }
   }
 

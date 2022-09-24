@@ -1,33 +1,36 @@
-class PokemonModel{
-    constructor(id=1){ this.subject= new rxjs.Subject(); this.setPokemonId(id); }
-    addObserver(obs){
-	obs(this);
-	const subscription=this.subject.subscribe(obs); 
-	return ()=> subscription.unsubscribe();
-    }
+class PokemonModel {
+  constructor(number = 1, name = "bulbasaur") {
+    //lista över presenters}
+    this.observers = [];
+    this.setNumber(number);
+    this.setName(name);
+  }
 
-    notifyObservers(){ this.subject.next(this); }
+  setNumber(number) {
+    if (number > 0) {
+      this.number = number;
+    }
+  }
 
-    get pokemonDetails(){
-	return this.promiseResult && this.promiseResult.data;
-    }
-    get pokemonError(){
-	return this.promiseResult && this.promiseResult.error;
-    }
-    setPokemonId(x){
-	if(x===this.pokemonId)
-	    return;
-	this.pokemonId=x;
-	
-	this.promiseResult= this.pokemonId &&
-	    new PromiseResults(fetch("https://pokeapi.co/api/v2/pokemon/"+this.pokemonId).then(r=>r.json()),
-			       ()=> this.notifyObservers());
-	this.notifyObservers();
-    }
-}
+  setName(name) {
+    this.name = name;
+  }
 
-class PromiseResults {
-    constructor(promise, notify){
-	(this.promise=promise) && promise.then(d=> this.data=d, e=> this.error=e).then(notify);
-    }
+  getName() {
+    return this.name ?? this.name | "no name";
+  }
+
+  addObservers(callback) {
+    this.observers = [...this.observers, callback];
+  }
+
+  notifyObservers() {
+    this.observers.forEach((callback) => {
+      try {
+        callback();
+      } catch (err) {
+        console.log("Error", err, callback);
+      }
+    });
+  }
 }

@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import NumberEditorView from "../src/views/NumberEditorView";
+
+import PokemonPresenter from "../src/presenters/NumberEditorPresenter";
+import NumberEditorPresenter from "../src/presenters/NumberEditorPresenter";
 
 export default function Home() {
+  //const model = new PokemonModel();
+
   const mockedProps = {
     poke: {
       id: 3,
@@ -19,7 +23,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <NumberEditorView props={mockedProps} />
+        <NumberEditorPresenter />
+        {/*  <PokemonPresenter /> */}
       </main>
 
       <footer className={styles.footer}>footer</footer>

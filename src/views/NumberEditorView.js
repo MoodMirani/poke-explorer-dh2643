@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 export default function NumberEditorView({ number, changedInputNumberCB }) {
   return (
     <div>

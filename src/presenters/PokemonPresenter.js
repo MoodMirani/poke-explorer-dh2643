@@ -1,4 +1,4 @@
-import PokemonView from "../views/PookemonView";
+import PokemonView from "../views/PokemonView";
 
 export default function PokemonPresenter() {
   //const [name, setName] = useState("balbasour");

@@ -1,4 +1,4 @@
-function PokemonView(props) {
+export default function PokemonView(props) {
   return (
     <div>
       <h1>

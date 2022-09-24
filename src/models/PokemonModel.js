@@ -26,6 +26,7 @@ export default class PokemonModel {
   }
 
   addObservers(callback) {
+    console.log("Vi är i addObservers");
     this.callback = callback;
     this.observers = this.observers.concat(this.callback);
     // this.observers = [...this.observers, callback];

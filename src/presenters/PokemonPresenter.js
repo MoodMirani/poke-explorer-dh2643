@@ -1,6 +1,6 @@
 import PokemonView from "../views/PokemonView";
 import { useState } from "react";
-export default function PokemonPresenter(model) {
+export default function PokemonPresenter({model}) {
   const [name, setName] = useState("balbasour");
   const [number, setNumber] = useState(1);
   console.log("Vi är i Pokemon Presenter");

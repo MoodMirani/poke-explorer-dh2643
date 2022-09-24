@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <NumberEditorPresenter model={model} />
-        <PokemonPresenter/>
+        <PokemonPresenter model={model}/>
       </main>
       <footer className={styles.footer}>footer</footer>
     </div>

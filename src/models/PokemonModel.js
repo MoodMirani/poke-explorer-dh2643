@@ -13,6 +13,10 @@ export default class PokemonModel {
     }
   }
 
+  getNumber() {
+    return this.number
+  }
+
   setName(name) {
     this.name = name;
   }
@@ -22,7 +26,9 @@ export default class PokemonModel {
   }
 
   addObservers(callback) {
-    this.observers = [...this.observers, callback];
+    this.callback = callback;
+    this.observers = this.observers.concat(this.callback);
+    // this.observers = [...this.observers, callback];
   }
 
   notifyObservers() {

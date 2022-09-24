@@ -9,7 +9,7 @@ export default class PokemonModel {
   setNumber(number) {
     if (number > 0) {
       this.number = number;
-			console.log("Number set in model.");
+      console.log("Number set in model.");
     }
   }
 

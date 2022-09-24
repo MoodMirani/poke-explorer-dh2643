@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 
 import PokemonPresenter from "../src/presenters/NumberEditorPresenter";
 import NumberEditorPresenter from "../src/presenters/NumberEditorPresenter";
-//import PokemonModel from "../src/models/PokemonModel";
+import PokemonModel from "../src/models/PokemonModel";
 
 export default function Home() {
   const model = new PokemonModel();

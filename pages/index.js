@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-import PokemonPresenter from "../src/presenters/NumberEditorPresenter";
+import PokemonPresenter from "../src/presenters/PokemonPresenter";
 import NumberEditorPresenter from "../src/presenters/NumberEditorPresenter";
 import PokemonModel from "../src/models/PokemonModel";
 
@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <NumberEditorPresenter model={model} />
-        <PokemonPresenter />
+        <PokemonPresenter/>
       </main>
       <footer className={styles.footer}>footer</footer>
     </div>

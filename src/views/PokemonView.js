@@ -1,4 +1,5 @@
 export default function PokemonView(props) {
+    console.log("Vi är i pokemon view");
   return (
     <div>
       <h1>

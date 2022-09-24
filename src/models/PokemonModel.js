@@ -5,33 +5,6 @@ export default class PokemonModel {
     this.setNumber(number);
     this.setName(name);
   }
-
-  setNumber(number) {
-    if (number > 0) {
-      this.number = number;
-      console.log("Number set in model.");
-    }
-  }
-
-  getNumber() {
-    return this.number
-  }
-
-  setName(name) {
-    this.name = name;
-  }
-
-  getName() {
-    return this.name ?? this.name | "no name";
-  }
-
-  addObservers(callback) {
-    console.log("Vi är i addObservers");
-    this.callback = callback;
-    this.observers = this.observers.concat(this.callback);
-    // this.observers = [...this.observers, callback];
-  }
-
   notifyObservers() {
     this.observers.forEach((callback) => {
       try {
@@ -41,4 +14,31 @@ export default class PokemonModel {
       }
     });
   }
+  setNumber(number) {
+    if (number > 0) {
+      this.number = number;
+      console.log("Number set in model.");
+      this.notifyObservers();
+    }
+  }
+
+  getNumber() {
+    return this.number
+  }
+
+  setName(name) {
+    this.name = name;
+    this.notifyObservers();
+  }
+
+  getName() {
+    return this.name ?? this.name | "no name";
+  }
+
+  addObservers(callback) {
+    console.log("Vi är i addObservers");
+    this.observers = [...this.observers, callback];
+  }
+
+ 
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import NumberEditorView from "../views/NumberEditorView";
 
 export default function NumberEditorPresenter({ model }) {
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(1);
 
   function changedInputNumberCB(event) {
     //e.preventDefault();

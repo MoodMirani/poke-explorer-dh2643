@@ -1,8 +1,8 @@
 import PokemonView from "../views/PokemonView";
 import { useState, useEffect } from "react";
 export default function PokemonPresenter({ model }) {
-  const [name, setName] = useState(model.getName());
-  const [number, setNumber] = useState(model.getNumber());
+  const [name, setName] = useState();
+  const [number, setNumber] = useState(1);
   console.log("Vi är i Pokemon Presenter");
 
   const getNameFromAPI = () => {
@@ -11,7 +11,10 @@ export default function PokemonPresenter({ model }) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data.name);
-        model.name = data.name;
+        setName(data.name);
+
+        // model.name = data.name;
+        //model.setName(data.name)
         //console.log(data.name);
         //console.log(name);
       });
@@ -19,7 +22,7 @@ export default function PokemonPresenter({ model }) {
 
   const updateImage = () => {
     setNumber(model.getNumber());
-    setName(getNameFromAPI);
+    getNameFromAPI();
   };
 
   useEffect(() => {
@@ -30,8 +33,8 @@ export default function PokemonPresenter({ model }) {
   return (
     <PokemonView
       //number={useModelProperty(props.model, "pokemonId") || ""}
-      id={model.number}
-      name={model.name}
+      id={number}
+      name={name}
       //setNumber={(x) => props.model.setPokemonId(x)}
     />
   );

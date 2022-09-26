@@ -21,14 +21,12 @@ export default function PokemonPresenter({ model }) {
   useEffect(() => {
     model.addObservers(updateImage);
     updateImage(); //First call into observer to initiate component state...
-  }, []);
+  });
 
   return (
     <PokemonView
-      //number={useModelProperty(props.model, "pokemonId") || ""}
       id={number}
       name={name}
-      //setNumber={(x) => props.model.setPokemonId(x)}
     />
   );
 }

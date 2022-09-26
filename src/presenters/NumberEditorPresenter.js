@@ -5,7 +5,7 @@ export default function NumberEditorPresenter({ model }) {
   const [number, setNumber] = useState(1);
 
   function changedInputNumberCB(event) {
-    //e.preventDefault();
+    // state
     setNumber(event.target.value);
 
     //Update model here
@@ -13,10 +13,8 @@ export default function NumberEditorPresenter({ model }) {
   }
   return (
     <NumberEditorView
-      //number={useModelProperty(props.model, "pokemonId") || ""}
       number={number}
       changedInputNumberCB={changedInputNumberCB}
-      //setNumber={(x) => props.model.setPokemonId(x)}
     />
   );
 }

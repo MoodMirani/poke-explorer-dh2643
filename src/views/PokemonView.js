@@ -7,9 +7,8 @@ export default function PokemonView(props) {
       </h1>
       <img
         src={
-          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-          props.id +
-          ".png"
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" 
+          + props.id + ".png"
         }
         height={200}
         alt="Pokemon Image"

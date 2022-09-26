@@ -9,12 +9,6 @@ import PokemonModel from "../src/models/PokemonModel";
 export default function Home() {
   const model = new PokemonModel();
 
-  const mockedProps = {
-    poke: {
-      id: 3,
-      name: "Pikachu",
-    },
-  };
   return (
     <div className={styles.container}>
       <Head>
@@ -26,7 +20,6 @@ export default function Home() {
         <NumberEditorPresenter model={model} />
         <PokemonPresenter model={model}/>
       </main>
-      <footer className={styles.footer}>footer</footer>
     </div>
   );
 }

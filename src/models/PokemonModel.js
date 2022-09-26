@@ -1,9 +1,7 @@
 export default class PokemonModel {
-  constructor(number = 1, name = "bulbasaur") {
-    //lista över presenters}
+  constructor(number = 1) {
     this.observers = [];
     this.setNumber(number);
-    this.setName(name);
   }
   notifyObservers() {
     this.observers.forEach((callback) => {
@@ -25,18 +23,7 @@ export default class PokemonModel {
     return this.number
   }
 
-  setName(name) {
-    this.name = name;
-    this.notifyObservers();
-  }
-
-  getName() {
-    return this.name ?? this.name | "no name";
-  }
-
   addObservers(callback) {
     this.observers = [...this.observers, callback];
   }
-
- 
 }

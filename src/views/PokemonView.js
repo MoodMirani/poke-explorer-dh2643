@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 export default function PokemonView(props) {
-  console.log("Vi är i pokemon view");
   return (
     <div>
       <h1>
@@ -12,6 +12,7 @@ export default function PokemonView(props) {
           ".png"
         }
         height={200}
+        alt="Pokemon Image"
       />
     </div>
   );
